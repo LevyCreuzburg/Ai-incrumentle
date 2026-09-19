@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#07100e" />
+  <title>NØVA // AI — Core Console</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="scanlines"></div>
+  <main class="app-shell">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark">NØVA</span><span class="brand-divider">//</span><span>AI CORE CONSOLE</span></div>
+      <div class="connection"><i></i> SYSTEM ONLINE <span class="top-separator">|</span> CYCLE <strong id="cycle">01</strong></div>
+    </header>
+
+    <section class="hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">AUTONOMOUS INTELLIGENCE PLATFORM <span>v0.7.4</span></p>
+        <h1>Build the mind.<br><em>Scale the signal.</em></h1>
+        <p class="lede">Dein Kern läuft. Deine Infrastruktur wächst. Verwandle rohe Rechenleistung in eine autonome Intelligenz.</p>
+      </div>
+      <div class="hero-status panel">
+        <div class="panel-label"><span>CORE STATUS</span><span class="live-dot">LIVE</span></div>
+        <div class="status-row"><span>CORE INTEGRITY</span><strong>98.4%</strong></div>
+        <div class="integrity-bar"><span id="integrity-fill"></span></div>
+        <div class="status-row subtle"><span>NEXT MILESTONE</span><span id="milestone-label">10,000 AI POWER</span></div>
+        <div class="milestone-bar"><span id="milestone-fill"></span></div>
+      </div>
+    </section>
+
+    <section class="metrics panel-grid">
+      <article class="metric-card main-metric">
+        <div class="metric-head"><span class="metric-icon">⚡</span><span>AI POWER</span><span class="metric-tag">PER CYCLE</span></div>
+        <div class="metric-value" id="power">0</div>
+        <div class="metric-foot"><span><b id="power-rate">0</b> / sec</span><span class="trend">↗ <b id="bonus-label">+0%</b></span></div>
+      </article>
+      <article class="metric-card">
+        <div class="metric-head"><span class="metric-icon credits">◆</span><span>CREDITS</span></div>
+        <div class="metric-value small" id="credits">0</div>
+        <div class="metric-foot"><span><b id="credit-rate">0</b> / sec</span><span>AVAILABLE</span></div>
+      </article>
+      <article class="metric-card">
+        <div class="metric-head"><span class="metric-icon">◈</span><span>EFFICIENCY</span></div>
+        <div class="metric-value small" id="efficiency">100%</div>
+        <div class="metric-foot"><span>CORE OUTPUT</span><span class="green">OPTIMAL</span></div>
+      </article>
+    </section>
+
+    <section class="workspace">
+      <div class="main-column">
+        <article class="process-panel panel">
+          <div class="section-heading"><div><p class="eyebrow">CORE INTERFACE</p><h2 id="interface-title">PROCESS INPUT</h2></div><div class="view-tabs"><button class="view-tab active" data-view="process-view">PROCESS</button><button class="view-tab" data-view="chat-view">AI CHAT</button></div></div>
+          <div id="process-view"><button class="process-button" id="process-button"><span class="button-glow"></span><span class="button-inner"><span class="process-symbol">+</span><span>PROCESS</span><small>GENERATE AI POWER</small></span></button><div class="process-meta"><span>BASE OUTPUT <b>+1 AI POWER</b></span><span>QUEUE <b id="queue">IDLE</b></span><span>LATENCY <b>0.04 MS</b></span></div></div>
+          <div id="chat-view" class="chat-view" hidden><div class="chat-toolbar"><span><i></i> SECURE OBSERVATION CHANNEL</span><span>READ ONLY</span></div><div class="chat-progression"><div class="chat-progress-label"><span>CHAT INTELLIGENCE <b id="chat-level">LEVEL 01</b></span><span>NEXT <b id="chat-next">100 AI POWER</b></span></div><div class="chat-progress-bar"><span id="chat-progress-fill"></span></div></div><div class="chat-feed" id="chat-feed"></div><div class="chat-status"><span>NØVA IS LISTENING</span><span class="typing-dots">● ● ●</span></div></div>
+        </article>
+
+        <article class="panel upgrades-panel">
+          <div class="section-heading"><div><p class="eyebrow">EXPAND YOUR CAPABILITY</p><h2>INFRASTRUCTURE</h2></div><div class="upgrade-controls"><div class="buy-modes" id="buy-modes"><button class="buy-mode active" data-amount="1">×1</button><button class="buy-mode" data-amount="10">×10</button><button class="buy-mode" data-amount="100">×100</button><button class="buy-mode" data-amount="max">MAX</button></div><span class="count-label"><b id="upgrade-count">0</b> / 9 ONLINE</span></div></div>
+          <div class="upgrade-list" id="upgrade-list"></div>
+        </article>
+
+        <article class="panel log-panel">
+          <div class="panel-label"><span>SYSTEM LOG</span><span>LIVE FEED</span></div>
+          <div class="log-feed" id="log-feed"></div>
+        </article>
+      </div>
+
+      <aside class="side-column">
+        <article class="panel modules-panel">
+          <div class="section-heading"><div><p class="eyebrow">SPECIALIZED SYSTEMS</p><h2>AI MODULES</h2></div></div>
+          <div id="module-list" class="module-list"></div>
+        </article>
+        <article class="panel rebuild-panel">
+          <div class="rebuild-orbit"><div class="orbit-core">↻</div></div>
+          <p class="eyebrow">SYSTEM EVOLUTION</p>
+          <h2>REBUILD THE CORE</h2>
+          <p class="rebuild-copy">Setze deinen Lauf zurück und erhalte einen permanenten Produktionsbonus.</p>
+          <div class="rebuild-stats"><span>NÄCHSTER BONUS</span><strong id="prestige-bonus">+25%</strong></div>
+          <div class="rebuild-requirement"><span>REQUIRED</span><b id="rebuild-requirement">10,000</b> AI POWER</div>
+          <button class="rebuild-button" id="rebuild-button" disabled>REBUILD CORE <span>↻</span></button>
+        </article>
+      </aside>
+    </section>
+
+    <footer><span>NØVA // AI RESEARCH DIVISION</span><span>ALL SYSTEMS NOMINAL <i></i></span></footer>
+  </main>
+  <div class="toast" id="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
